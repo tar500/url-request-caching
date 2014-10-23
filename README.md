@@ -6,13 +6,13 @@ url-request-caching
 NSURL * url = [NSURL URLWithString:@"http://wikipedia.org"];
 
 // создаем запрос
-NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url
+NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url
                                                        cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                    timeoutInterval:30.0];
 
 // достаем закешированный ответ для этого запроса
 NSCachedURLResponse * cachedResponse = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];
-NSHTTPURLResponse *response = (NSHTTPURLResponse *)cachedResponse.response;
+NSHTTPURLResponse * response = (NSHTTPURLResponse *)cachedResponse.response;
 
 if (response) {
     
